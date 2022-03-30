@@ -4,7 +4,7 @@ Source Code for this Module (https://github.com/WEEMR/terraform-aws-DataCenter_E
 
 Terraform Registery         (https://registry.terraform.io/modules/WEEMR/DataCenter_Enviroment_3B/aws/latest)
 
-<img width="578" alt="image" src="https://user-images.githubusercontent.com/82145296/160900894-baa7db06-c72a-44d8-98cf-97ca7354f0ee.png">
+![image](https://user-images.githubusercontent.com/82145296/160909922-7ec8798b-7c03-49e0-95ac-37e4df390e2e.png)
 
 The module will create the below resources:
 
