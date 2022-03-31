@@ -31,8 +31,8 @@ module "DataCenter_Enviroment_3B" {
 
 #  ----------------  Outputs  -----------------  # 
   
-output "__LAB__URLs__" {
-  value = "http://webserver-hub1.wrady.fortinetpslab.com/lab.html"
+output "__LAB_URLs__" {
+  value = module.DC_Enviroment_3B.LAB_URLs
 }
 
 output "hub_1_Windows_Password" {
