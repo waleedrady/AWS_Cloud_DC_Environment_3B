@@ -1,23 +1,40 @@
-module "DataCenter_Enviroment_3B" {
+variable "username" {default = "jdoe" }              # Enter your first initial and last name as your username
+variable "password" {default = "Fortinet123!"}        # Change the password from "fortinet123" to your own password
+#----- 
+variable "keyname" {default = "WRady_AWS_FTNT_Key"}   #  Your AWS Keypair name to create resources
+#----
+variable "access_key" {default = "YOUR ACCESS KEY"} 
+variable "secret_key" {default = "YOUR SECRET KEY"}
+#----
+variable "Public_Hosted_Zone" {default = "xyz.com"}   # You must have a domain registerd with AWS Route53 or Managed by AWS with a Hosted Zone Created. i.e xyz.com
+variable "SubHosted_Zone" {default = "jdoe.xyz.com"} # Creates a Public SubHosted zone  - Enter a sub-hosted name for the domain above. i.e lab.xyz.com
+
+
+
+module "DC_Enviroment_3B" {
+
   source  = "WEEMR/DataCenter_Enviroment_3B/aws"
   version = "1.6.0"
-  # insert the 7 required variables
 
+  # insert the 7 required variables here
+
+ 
   # ------------------------------------------------------ AWS Account Settings ------------------------------------------ #
 
-  access_key = "YOUR ACCESS KEY"
-  secret_key = "YOUR SECRET KEY"
+  access_key = var.access_key
+  secret_key = var.secret_key
 
   # ------------------------------------------------------ Variables ----------------------------------------------------- #
 
-  username = "jdoe"  #  Your 1st Initial, Last Name to tag resources i.e jdoe
-  keyname  = "YOUR AWS KEY NAME"   #  Your AWS Keypair name to create resources
-  Password = "Fortinet123!"        #  TO DO: Change the password from "fortinet123" to your own password
+
+  username = var.username 
+  keyname  = var.keyname 
+  Password = var.password        
 
   # ------------------------------------------------------  DNS ------------------------------------------------------------ #
 
-  Public_Hosted_Zone = "fortinetpslab.com"            # You must have a domain registerd with AWS Route53 or Managed by AWS with a Hosted Zone Created. i.e xyz.com
-  SubHosted_Zone     = "jdoe.fortinetpslab.com" # Creates a Public SubHosted zone  - Enter a sub-hosted name for the domain above. i.e lab.xyz.com
+  Public_Hosted_Zone = var.Public_Hosted_Zone 
+  SubHosted_Zone     = var.SubHosted_Zone 
 
   # ------------------------------------------------------ Reference Module ------------------------------------------------ #
 
@@ -26,13 +43,9 @@ module "DataCenter_Enviroment_3B" {
   #                             Source Code = https://github.com/WEEMR/terraform-aws-DataCenter_Enviroment_3B
 
 }
-  
 
-
-#  ----------------  Outputs  -----------------  # 
-  
 output "__LAB_URLs__" {
-  value = module.DC_Enviroment_3B.LAB_URLs
+  value = "http://lab.${var.username}.${var.Public_Hosted_Zone}.com/lab.html"
 }
 
 output "hub_1_Windows_Password" {
