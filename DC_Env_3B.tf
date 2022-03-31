@@ -1,10 +1,10 @@
 variable "username" {default = "jdoe" }              # Enter your first initial and last name as your username
 variable "password" {default = "Fortinet123!"}        # Change the password from "fortinet123" to your own password
 #----- 
-variable "keyname" {default = "WRady_AWS_FTNT_Key"}   #  Your AWS Keypair name to create resources
+variable "keyname" {default = "key_name"}   #  Your AWS Keypair name to create resources
 #----
-variable "access_key" {default = "YOUR ACCESS KEY"} 
-variable "secret_key" {default = "YOUR SECRET KEY"}
+variable "access_key" {default = "YOUR_ACCESS_KEY"} 
+variable "secret_key" {default = "YOUR_SECRET_KEY"}
 #----
 variable "Public_Hosted_Zone" {default = "xyz.com"}   # You must have a domain registerd with AWS Route53 or Managed by AWS with a Hosted Zone Created. i.e xyz.com
 variable "SubHosted_Zone" {default = "jdoe.xyz.com"} # Creates a Public SubHosted zone  - Enter a sub-hosted name for the domain above. i.e lab.xyz.com
