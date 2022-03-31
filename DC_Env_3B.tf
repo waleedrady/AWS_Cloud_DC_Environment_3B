@@ -21,33 +21,37 @@ module "DataCenter_Enviroment_3B" {
 
   # ------------------------------------------------------ Reference Module ------------------------------------------------ #
 
-  #                          Terraform Registery Module = https://github.com/waleedrady/AWS_Cloud_DC_Environment_3B
+  #                         Terraform Registery Module = https://github.com/waleedrady/AWS_Cloud_DC_Environment_3B
 
   #                             Source Code = https://github.com/WEEMR/terraform-aws-DataCenter_Enviroment_3B
 
 }
+  
 
 
 #  ----------------  Outputs  -----------------  # 
-
+  
+output "__LAB__URLs__" {
+  value = "http://webserver-hub1.wrady.fortinetpslab.com/lab.html"
+}
 
 output "hub_1_Windows_Password" {
-  value = rsadecrypt(module.DC_Enviroment_3B.hub_1_Windows_Password, file("./WRady_AWS_FTNT_Key.pem"))
+  value = rsadecrypt(module.DC_Enviroment_3B.hub_1_Windows_Password, file("./Key.pem"))
 }
 
 output "spoke_1_Windows_Password" {
-  value = rsadecrypt(module.DC_Enviroment_3B.spoke_1_Windows_Password, file("./WRady_AWS_FTNT_Key.pem"))
+  value = rsadecrypt(module.DC_Enviroment_3B.spoke_1_Windows_Password, file("./Key.pem"))
 }
 
 output "spoke_2_Windows_Password" {
-  value = rsadecrypt(module.DC_Enviroment_3B.spoke_2_Windows_Password, file("./WRady_AWS_FTNT_Key.pem"))
+  value = rsadecrypt(module.DC_Enviroment_3B.spoke_2_Windows_Password, file("./Key.pem"))
 }
 
 output "spoke_3_Windows_Password" {
-  value = rsadecrypt(module.DC_Enviroment_3B.spoke_3_Windows_Password, file("./WRady_AWS_FTNT_Key.pem"))
+  value = rsadecrypt(module.DC_Enviroment_3B.spoke_3_Windows_Password, file("./Key.pem"))
 }
 
 output "spoke_4_Windows_Password" {
-  value = rsadecrypt(module.DC_Enviroment_3B.spoke_4_Windows_Password, file("./WRady_AWS_FTNT_Key.pem"))
+  value = rsadecrypt(module.DC_Enviroment_3B.spoke_4_Windows_Password, file("./Key.pem"))
 }
 
