@@ -1,6 +1,6 @@
 module "DataCenter_Enviroment_3B" {
   source  = "WEEMR/DataCenter_Enviroment_3B/aws"
-  version = "1.2.0"
+  version = "1.6.0"
   # insert the 7 required variables
 
   # ------------------------------------------------------ AWS Account Settings ------------------------------------------ #
