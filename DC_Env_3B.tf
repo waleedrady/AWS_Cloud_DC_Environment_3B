@@ -45,7 +45,7 @@ module "DC_Enviroment_3B" {
 }
 
 output "__LAB_URLs__" {
-  value = "http://lab.${var.username}.${var.Public_Hosted_Zone}.com/lab.html"
+  value = "http://lab.${var.username}.${var.Public_Hosted_Zone}/lab.html"
 }
 
 output "hub_1_Windows_Password" {
